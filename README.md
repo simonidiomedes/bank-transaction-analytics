@@ -15,7 +15,7 @@ retail banking data work.
 - **Window functions applied to a real compliance use case** - a
   `LAG` + `COALESCE` query that detects transaction structuring
   (multiple transfers just under a reporting threshold, submitted in
-  quick succession) — the same technique banks use to flag potential
+  quick succession) - the same technique banks use to flag potential
   money-laundering patterns for review.
 - **Design reasoning made explicit** - every non-obvious schema
   decision is documented in [`docs/design_notes.md`](docs/design_notes.md),
