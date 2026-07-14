@@ -2,7 +2,7 @@
 -- Branch Summary: total volume and transaction count per branch,
 -- broken down by transaction type.
 --
--- This is the "hello world" of the analytics layer — establishes
+-- This is the "hello world" of the analytics layer which establishes
 -- which branches are busiest and in what way (a branch that's mostly
 -- withdrawals behaves differently from one that's mostly deposits).
 -- =====================================================================
