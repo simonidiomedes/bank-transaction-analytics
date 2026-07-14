@@ -1,4 +1,4 @@
-# Bank Transaction Analytics- Lesotho Branch Network
+# Bank Transaction Analytics-Branch Network
 
 SQL analytics project modeling a simplified banking transaction system
 across a three-branch network (Maseru, Hatikoe, Maputsoe), built to
@@ -12,12 +12,12 @@ retail banking data work.
   amounts, `DECIMAL` for currency (never `FLOAT`), and a `UNIQUE`
   constraint on `reference_id` as an idempotency guard against
   duplicate transaction writes.
-- **Window functions applied to a real compliance use case** — a
+- **Window functions applied to a real compliance use case** - a
   `LAG` + `COALESCE` query that detects transaction structuring
   (multiple transfers just under a reporting threshold, submitted in
   quick succession) — the same technique banks use to flag potential
   money-laundering patterns for review.
-- **Design reasoning made explicit** — every non-obvious schema
+- **Design reasoning made explicit** - every non-obvious schema
   decision is documented in [`docs/design_notes.md`](docs/design_notes.md),
   including tradeoffs that were consciously made (e.g. single-entry
   vs. double-entry transaction modeling) rather than left unstated.
