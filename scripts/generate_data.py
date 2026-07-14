@@ -36,7 +36,7 @@ for day in range(90):
             add(acc, None, 'withdrawal', amount, ts, ref)
 
 # Inject a deliberate compliance pattern: account 106 makes 4 rapid
-# transfers just under a round threshold within a few hours — the kind
+# transfers just under a round threshold within a few hours - the kind
 # of structuring pattern a compliance query should catch.
 suspect_day = start + timedelta(days=45)
 for i in range(4):
