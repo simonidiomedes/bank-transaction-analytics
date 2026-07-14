@@ -41,8 +41,8 @@ happened. `created_at` is system time - when the row was physically
 written to the database. They usually match, but they can diverge:
 a backdated correction, a batch import processed the next morning, a
 reversal entered after investigation. Keeping them separate preserves
-an honest audit trail ,you can always tell what the system *recorded*
-versus what actually *happened*, which matters for both compliance and
+an honest audit trail ,you can always tell what the system recorded
+versus what actually happened, which matters for both compliance and
 debugging.
 
 ## Why single-entry rather than double-entry bookkeeping
