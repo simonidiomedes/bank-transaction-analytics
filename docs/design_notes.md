@@ -54,18 +54,18 @@ banking ledgers work). Double-entry is the more correct design for a
 production ledger, but it roughly doubles the row count and complicates
 every query with a join back to itself. Single-entry was chosen
 deliberately here to keep the analytical queries readable for a
-learning project — this tradeoff is called out explicitly rather than
+learning project - this tradeoff is called out explicitly rather than
 left for someone to discover the hard way.
 
 ## Why the compliance query uses COALESCE with LAG
 
 `LAG()` returns NULL for the first row in each partition (an account's
 very first transfer has no "previous transfer" to compare against).
-Any arithmetic done directly on that NULL — like a time-gap
-calculation — becomes NULL, and rows with a NULL gap effectively
+Any arithmetic done directly on that NULL - like a time-gap
+calculation - becomes NULL, and rows with a NULL gap effectively
 disappear from `WHERE gap <= 360` style filters, which usually just
 lets them silently pass through unflagged rather than raising an
 error. `COALESCE` substitutes the current row's own timestamp when
 `LAG` returns NULL, which forces the gap calculation to come out to
-exactly 0 for that first row — an explicit, intentional value instead
+exactly 0 for that first row - an explicit, intentional value instead
 of an implicit NULL that behaves unpredictably in later filtering.
