@@ -36,12 +36,12 @@ to write.
 
 ## Why `created_at` is separate from `transaction_timestamp`
 
-`transaction_timestamp` is business time — when the transaction
-happened. `created_at` is system time — when the row was physically
+`transaction_timestamp` is business time - when the transaction
+happened. `created_at` is system time - when the row was physically
 written to the database. They usually match, but they can diverge:
 a backdated correction, a batch import processed the next morning, a
 reversal entered after investigation. Keeping them separate preserves
-an honest audit trail — you can always tell what the system *recorded*
+an honest audit trail ,you can always tell what the system *recorded*
 versus what actually *happened*, which matters for both compliance and
 debugging.
 
