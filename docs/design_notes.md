@@ -1,6 +1,6 @@
 # Design Notes
 
-Short notes on *why* each decision was made — not just what the schema does.
+Short notes on *why* each decision was made, not just what the schema does.
 
 ## Why DECIMAL(12,2), never FLOAT, for money
 
