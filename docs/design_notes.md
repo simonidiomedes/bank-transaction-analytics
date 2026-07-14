@@ -5,7 +5,7 @@ Short notes on *why* each decision was made, not just what the schema does.
 ## Why DECIMAL(12,2), never FLOAT, for money
 
 FLOAT stores an approximation in binary, so values like 0.10 can't be
-represented exactly — small rounding errors accumulate across
+represented exactly - small rounding errors accumulate across
 transactions and eventually produce balances that are off by fractions
 of a cent. DECIMAL stores an exact base-10 value, which is what money
 actually is. Any column holding currency should be DECIMAL or an
@@ -15,7 +15,7 @@ equivalent fixed-point type, never a floating-point type.
 
 If a transfer is submitted through an API and the client doesn't
 receive a response in time (network timeout), a naive system will
-retry the request — and without a safeguard, that retry creates a
+retry the request - and without a safeguard, that retry creates a
 second, duplicate transaction, silently double-crediting or
 double-debiting an account. Making `reference_id` UNIQUE means the
 retried insert fails with a constraint violation instead of silently
