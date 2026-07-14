@@ -47,7 +47,7 @@ docs/
 3. Run any query in `queries/` against the populated database.
 
 `queries/03_compliance_flags.sql` will return three flagged
-transactions from account 106 — a deliberately embedded structuring
+transactions from account 106 - a deliberately embedded structuring
 pattern (four transfers to the same account, each just under a
 10,000 threshold, within a few hours) used to verify the detection
 logic actually works rather than just compiling.
