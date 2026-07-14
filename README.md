@@ -54,5 +54,5 @@ logic actually works rather than just compiling.
 
 ## Tech
 
-SQL Server (T-SQL) syntax — `GETDATE()`, `DATEDIFF`, window functions
+SQL Server (T-SQL) syntax - `GETDATE()`, `DATEDIFF`, window functions
 via `OVER (PARTITION BY ... ORDER BY ...)`.
