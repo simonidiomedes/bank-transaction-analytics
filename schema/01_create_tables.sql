@@ -1,5 +1,5 @@
 -- =====================================================================
--- Bank Transaction Analytics — Schema
+-- Bank Transaction Analytics - Schema
 -- Lesotho branch network: Maseru, Hatikoe, Maputsoe
 -- =====================================================================
 
@@ -36,14 +36,14 @@ CREATE TABLE accounts (
 -- transactions: the core table.
 --
 -- Design decisions worth noting (see docs/design_notes.md for the why):
---   1. amount is DECIMAL(12,2), never FLOAT — money must be exact.
+--   1. amount is DECIMAL(12,2), never FLOAT - money must be exact.
 --   2. reference_id is UNIQUE — this is the idempotency guard. If the
 --      same transaction gets submitted twice (e.g. a retried API call
 --      after a network timeout), the duplicate insert fails loudly
 --      instead of silently double-crediting an account.
---   3. related_account_id is nullable — only populated for transfers,
+--   3. related_account_id is nullable - only populated for transfers,
 --      linking the two legs of a transfer together.
---   4. created_at is separate from transaction_timestamp — the former
+--   4. created_at is separate from transaction_timestamp - the former
 --      is when the ROW was written (audit trail), the latter is when
 --      the transaction actually happened (business time). They can
 --      differ, e.g. backdated corrections.
