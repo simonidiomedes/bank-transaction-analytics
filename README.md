@@ -1,4 +1,4 @@
-# Bank Transaction Analytics — Lesotho Branch Network
+# Bank Transaction Analytics- Lesotho Branch Network
 
 SQL analytics project modeling a simplified banking transaction system
 across a three-branch network (Maseru, Hatikoe, Maputsoe), built to
@@ -7,7 +7,7 @@ retail banking data work.
 
 ## What this project shows
 
-- **Schema design with real constraints** — referential integrity via
+- **Schema design with real constraints** - referential integrity via
   foreign keys, `CHECK` constraints on transaction types and positive
   amounts, `DECIMAL` for currency (never `FLOAT`), and a `UNIQUE`
   constraint on `reference_id` as an idempotency guard against
